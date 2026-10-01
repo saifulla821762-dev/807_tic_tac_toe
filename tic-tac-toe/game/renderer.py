@@ -4,10 +4,10 @@ renderer: all pygame drawing lives here, kept separate from game logic.
 
 import pygame
 
-WIDTH, HEIGHT = 400, 500
+WIDTH, HEIGHT = 400, 560
 BOARD_SIZE = 360
 CELL_SIZE = BOARD_SIZE // 3
-BOARD_TOP = 100
+BOARD_TOP = 125
 WINDOW_SIZE = (WIDTH, HEIGHT)
 
 COLOR_BG = (245, 245, 245)

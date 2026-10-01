@@ -16,8 +16,10 @@ A working Tic-Tac-Toe game with:
   you, using a simple random-move opponent - this lab is designed for
   one person to play solo against the computer, not for two people
   sharing a keyboard
-- Basic win and draw detection, and a "Press R for a new round"
-  restart
+- Win detection for rows, columns, and both diagonals
+- A match scoreboard for X wins, O wins, and draws
+- Controls for choosing the next round's starter and restarting a round
+  or the whole match
 
 It has **one deliberate bug** (with several related symptoms) and
 **three features** left for you to build. You are expected to
@@ -45,8 +47,11 @@ pip install -r requirements.txt
 python main.py
 ```
 
-**Controls:** You play X - click a cell to place it. The computer
-automatically plays O right after you. Press R for a new round.
+**Controls:** Click an empty cell to place X. The computer plays O
+automatically. Press **X** or **O** to choose who starts the next round,
+**R** to restart the round while keeping the scoreboard, or **M** to reset
+the whole match and clear the scoreboard. Choosing O makes the computer
+play first in the next round.
 
 ---
 

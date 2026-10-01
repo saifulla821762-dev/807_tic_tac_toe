@@ -18,6 +18,7 @@ def main():
     pygame.display.set_caption("Tic-Tac-Toe")
     clock = pygame.time.Clock()
     font = pygame.font.SysFont("consolas", 22)
+    small_font = pygame.font.SysFont("consolas", 16)
 
     engine = GameEngine()
     running = True
@@ -30,7 +31,7 @@ def main():
             elif event.type == pygame.KEYDOWN:
                 engine.handle_keydown(event.key)
 
-        engine.draw(screen, font)
+        engine.draw(screen, font, small_font)
 
         pygame.display.flip()
         clock.tick(60)
