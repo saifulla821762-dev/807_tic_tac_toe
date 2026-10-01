@@ -29,7 +29,7 @@ class GameEngine:
         self.winner = None   # 'X', 'O', or None (meaning draw, only valid when round_over)
 
     def handle_click(self, pos):
-        if self.current_player != HUMAN_SYMBOL:
+        if self.round_over or self.current_player != HUMAN_SYMBOL:
             return   # not your turn - the computer is about to move (or already has)
         cell = board_pos_to_cell(pos)
         if cell is None:
@@ -57,14 +57,13 @@ class GameEngine:
             self.__init__()
 
     def check_round_end(self):
-        if is_board_full(self.board):        # BUG: checked before looking for a winner
-            self.round_over = True
-            self.winner = None
-            return
         winner = check_winner(self.board)
         if winner:
             self.round_over = True
             self.winner = winner
+        elif is_board_full(self.board):
+            self.round_over = True
+            self.winner = None
 
     def draw(self, surface, font):
         from game import renderer
